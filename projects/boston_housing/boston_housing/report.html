@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11876,23 +11876,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11923,7 +11923,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -11994,7 +11994,7 @@ Standard deviation of prices: $165,340.28
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
@@ -12056,7 +12056,7 @@ Standard deviation of prices: $165,340.28
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12136,7 +12136,7 @@ Standard deviation of prices: $165,340.28
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;train_test_split&#39;</span>
@@ -13275,22 +13275,10 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li>Graph 1: max_depth = 1</li>
+<li>Graph with max_depth = 3</li>
 </ul>
-<p>Low model complexity leads to high bias (the model does not fit the training set) and high variance (the model does not fit the test set). The model perfoms poorly and increasing the training set size does not help.</p>
-<ul>
-<li>Graph 2: max_depth = 3</li>
-</ul>
-<p>Increasing model compleity from 1 to 3 helps impoving the coefficient of determination for both of the training set and the test set (R<sup>2</sup>~0.8). Increasing the training set size beyond 150 data points does not seem to improve this score.</p>
-<ul>
-<li>Graph 3: max_depth = 6</li>
-</ul>
-<p>Increasing model complexity from 3 to 6 improves the coefficient of determination for the trainig set but not for the test set. The model is starting to overfit the data.</p>
-<ul>
-<li>Graph 4: max_depth = 10</li>
-</ul>
-<p>Increasing model complexity from 6 to 10 clearly leads to overfiting (R<sup>2</sup>~1 for the training set and R<sup>2</sup>~0.6 for the test set) while increasing the training set size does not help much. This is causing low bias and high variance.</p>
-<p>The best configutaion is <strong>graph 3</strong> which generalizes well and also fits the data reasonably well.</p>
+<p>When there are few instances in the training set the model fits them almost perfectly. That's why the learning curve start with a R-squared of 1. Adding more data leads to a lower value of R-quared until it reaches a plateau arround the value of 0.8. Adding more data does not make the performance of the model on the training set better or worse.</p>
+<p>The performance of model on the validation set starts at a low value (R<sup>2</sup> = 0) : it is trained on few data instances. In fact, the model can not generalize properly with a small training set. As the size of the training set increases, the model performs better. The model is showed more examples, it learns better and generalizes better. That's why error goes down. However, the performance ends up at a plateau very close to the perfomance of the model on the training set. Adding more data will not help. It's better to use a more complexe model (increase max_depth for example) or come up with better features.</p>
 
 </div>
 </div>
@@ -13784,9 +13772,9 @@ JyIigaGkJyIigaGkJyIigaGkJyIigfE/arwlCc5zRjoAAAAASUVORK5CYII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li><p>When the model is trained with a maximum depth of one it performs poorly on the training set (R<sup>2</sup> ~ 0.5) and hence it suffers from high bias. It also performs poorly on the validation set (R<sup>2</sup> ~ 0.3) and hence it suffers from high variance.</p>
+<li><p>When the model is trained with a maximum depth of 1 it performs poorly on the training set and on the validation set. Both training and validation scores and fairy low. The model is underfitting the data. It suffers from high bias.</p>
 </li>
-<li><p>When the model is trained with a maximum depth of 10 it performs very well on the training set (R<sup>2</sup>~1) and hence has a low bias. However it performs not very well on the validation set (R<sup>2</sup> ~ 0.7) and thus suffers from a high variance. We can say that the model is overfitting the data.</p>
+<li><p>When the model is trained with a maximum depth of 10 it performs almost perfectly on the training set (R<sup>2</sup>~1). However there is a gap of performance between the training set and the validation set. The model is overfitting the trainig data. It suffers from high variance.</p>
 </li>
 </ul>
 
@@ -13871,8 +13859,8 @@ We can use sklearn's GridSearchCV to try all the combinations (3x3 = 9) to searc
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>The k-fold cross validation technique randomly splits the training set into k distinct 'folds'. Then it picks one fold as a test set and it trains the algorith using k-1 remaining folds as a training set. It does so k times.  The result is the k evaluation scores for the different k combinations of folds.</p>
-<p>When optimizing a model using grid search, it is better to use different test sets for each combination of parameters and hence prevent overfitting and ensure better generalization.</p>
+<p>The k-fold cross validation technique randomly splits the training set into k distinct 'folds'. Then it picks one fold as a test set and it trains the algorith using k-1 remaining folds as a training set. It does so k times.  The result is the k evaluation scores for the different k combinations of folds. Finally, the k evalution scores are combined into one single value which is the average of the k other values. This average is known as the cross-validation error.</p>
+<p>The advantage of cross validation with k-fold is that tunnig parameter using grid search depends less on how the data is split. In fact, every instance in the data set gets to be one time in the validation set and k-1 time in the training set.</p>
 <p>For example, let's say we want to train a model to recongnize emails from two persons, X and Y. If the training set contains only emails from person X and the validation set only emails from person Y, the model will never perfom well on the valiadation set because it has never been trained on emails form person Y. It is better to wisely chose what emails should go to the training set and what emails should go the validation set. The k-fold method can help on making this choice by evaluation how well the model perfoms on different comabinations of data points.</p>
 
 </div>
@@ -13909,7 +13897,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -13927,10 +13915,10 @@ For the <code>fit_model</code> function in the code cell below, you will need to
     <span class="n">cv_sets</span> <span class="o">=</span> <span class="n">ShuffleSplit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n_iter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a decision tree regressor object</span>
-    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+    <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
@@ -13975,7 +13963,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Fit the training data to the model using grid search</span>
@@ -14065,7 +14053,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a matrix for client data</span>
@@ -14076,6 +14064,11 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <span class="c1"># Show predictions</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">price</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">client_data</span><span class="p">)):</span>
     <span class="k">print</span> <span class="s2">&quot;Predicted selling price for Client {}&#39;s home: ${:,.2f}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">price</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Describtive statistics for the features&quot;</span>
+<span class="k">print</span> <span class="n">features</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="k">print</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Descrivtive statistics for the price&quot;</span>
+<span class="k">print</span> <span class="n">prices</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -14095,6 +14088,28 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 <pre>Predicted selling price for Client 1&#39;s home: $419,700.00
 Predicted selling price for Client 2&#39;s home: $287,100.00
 Predicted selling price for Client 3&#39;s home: $927,500.00
+
+ Describtive statistics for the features
+               RM       LSTAT     PTRATIO
+count  489.000000  489.000000  489.000000
+mean     6.240288   12.939632   18.516564
+std      0.643650    7.081990    2.111268
+min      3.561000    1.980000   12.600000
+25%      5.880000    7.370000   17.400000
+50%      6.185000   11.690000   19.100000
+75%      6.575000   17.120000   20.200000
+max      8.398000   37.970000   22.000000
+
+ Descrivtive statistics for the price
+count    4.890000e+02
+mean     4.543429e+05
+std      1.653403e+05
+min      1.050000e+05
+25%      3.507000e+05
+50%      4.389000e+05
+75%      5.187000e+05
+max      1.024800e+06
+Name: MEDV, dtype: float64
 </pre>
 </div>
 </div>
@@ -14108,16 +14123,18 @@ Predicted selling price for Client 3&#39;s home: $927,500.00
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>These are the predition made with the optimized algorithm :</p>
 <ul>
-<li><p>Predicted selling price for Client 1's home: $419,700.00</p>
-</li>
-<li><p>Predicted selling price for Client 2's home: $287,100.00</p>
-</li>
-<li><p>Predicted selling price for Client 3's home: $927,500.00</p>
-</li>
+<li>Predicted selling price for Client 1's home: $419,700.00</li>
 </ul>
-<p>These predictions seem reasonable given the values of the respective features. Client 3's home is 3 times more expensive than client 2's home for example. Indeed, it has twice more rooms and is located in a wealthy neighborhood with much better schools. A parallel analyis can be made for client 1's home compared to client 2 and client 3 homes.</p>
+<p>This price is slightly below the mean price of the data set but it is still within one standard deviation from the mean. Its features have values that are also within or slightly below one standard deviation from the mean. This is a reasonable price.</p>
+<ul>
+<li>Predicted selling price for Client 2's home: $287,100.00</li>
+</ul>
+<p>This price is below one standard deviation but within two standard deviations from the mean. RM and PTRATIO are within one standad deviation from the mean. However LSTAT is greater than upper quartile (poor neighborhood). The poverty rate of the neighborhood has an important impact on the price.</p>
+<ul>
+<li>Predicted selling price for Client 3's home: $927,500.00</li>
+</ul>
+<p>The predicted price is greater than the upper quartile of the data set. RM is slightly lower that its max value. LSTAT is slightly greater than its min value in the data set. PTRATIO is equal to its minimum value (very reach neighnborhood). We should probably predict a higher price.</p>
 
 </div>
 </div>
